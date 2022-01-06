@@ -125,7 +125,7 @@ public class AccountController {
         }
     }
 
-    @GetMapping(value = "/login")
+    @PostMapping(value = "/login")
     ResponseEntity<ResponseObject> loginAccount(@Valid @RequestBody Account account) {
         Optional<Account> accountOptional = accountService.findAccountByUsername(account.getUsername());
         if (accountOptional.isPresent()) {

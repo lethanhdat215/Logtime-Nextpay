@@ -108,7 +108,7 @@ public class AccountController {
         Optional<Account> account = accountRepository.findAccountByUsername(accountForgotPassword.getUsername());
         if (account.isPresent()) {
             account.get().setActive(false);
-            String password =  RandomStringUtils.randomAscii(10); // random pass 6 so
+            String password =  RandomStringUtils.randomAlphanumeric(10); // random pass 6 so
 //            account.get().setPassword(password);
             String passwordEncoder = bCryptPasswordEncoder.encode(password);
             account.get().setPassword(passwordEncoder);

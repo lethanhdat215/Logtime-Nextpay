@@ -42,6 +42,7 @@ public class Security extends WebSecurityConfigurerAdapter {
                 .antMatchers("/account/v1/get").permitAll()
                 .antMatchers("/account/v1/login").permitAll()
                 .antMatchers("/account/v1/forgot-password").permitAll()
+                .antMatchers("/account/v1/create").permitAll()
 
                 .anyRequest().authenticated().and()
 //                .antMatchers("/account/v1/logout").permitAll()

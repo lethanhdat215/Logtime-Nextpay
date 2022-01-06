@@ -58,7 +58,8 @@ public class ClientServiceImpl implements ClientService {
                 if (sum < 8) {
                     dataMailDTO.setTo(email);
                     dataMailDTO.setSubject("NHẮC NHỞ LOGTIME");
-                    dataMailDTO.setContent("Hom nay ban chua logtime du 8 tieng. so gio con thieu ngay hom nay:" + (8 - sum));
+                    dataMailDTO.setContent("Hôm nay bạn chưa logtime đủ 8 tiếng. \n "+
+                            "Số giờ logtime còn thiếu ngày hôm nay:" + (8 - sum));
                     mailService.sendMail(dataMailDTO, "client");
                 }
             }
@@ -102,13 +103,13 @@ public class ClientServiceImpl implements ClientService {
                                 "    </style>\n" +
                                 "</head>\n" +
                                 "<body>\n" +
-                                "<p>Dear Anh/Chi,</p>\n" +
-                                "<p>Gui nhac nho logtime den anh chi: </p>\n" +
-                                "<p>Tuan nay ban chua logtime du. Logtime di  </p>\n" +
-                                "<p>So gio loctime hien tai cua ban la : " + sum + "</p>\n"+
-                                "<p>So gio loctime toi thieu la : " + entriesTime.getSumHours() + "</p>\n"+
-                                "<p>So gio logtime ban con thieu : " + (entriesTime.getSumHours() - sum) + "</p>\n" +
-                                "<p>Day la email tu dong khong can tra loi dau</p>\n" +
+                                "<p>Dear Anh/Chị,</p>\n" +
+                                "<p>Gửi nhắc nhở logtime đến anh chị: </p>\n" +
+                                "<p>Tuần này bạn chưa logtime đủ!  </p>\n" +
+                                "<p>Số giờ loctime hiện tại: " + sum + "</p>\n"+
+                                "<p>Số giờ logtime tối thiểu là : " + entriesTime.getSumHours() + "</p>\n"+
+                                "<p>Số giờ logtime bạn còn thiếu là : " + (entriesTime.getSumHours() - sum) + "</p>\n" +
+                                "<p>Đây là email tự động không cần trả lời đâu...!</p>\n" +
                                 "<h3>Im testing send a HTML email</h3>"
                                 + "<img src='http://www.apache.org/images/asf_logo_wide.gif'>" +
                                 "</body>\n" +
@@ -134,13 +135,13 @@ public class ClientServiceImpl implements ClientService {
                                 "    </style>\n" +
                                 "</head>\n" +
                                 "<body>\n" +
-                                "<p>Dear Anh/Chi,</p>\n" +
-                                "<p>Gui nhac nho logtime den anh chi: </p>\n" +
-                                "<p>Tuan nay ban chua logtime du. Logtime di  </p>\n" +
-                                "<p>So gio loctime hien tai cua ban la : " + sum + "</p>\n"+
-                                "<p>So gio loctime toi thieu la : " + entriesTimeDTO + "</p>\n"+
-                                "<p>So gio logtime ban con thieu : " + (entriesTimeDTO - sum) + "</p>\n" +
-                                "<p>Day la email tu dong khong can tra loi dau</p>\n" +
+                                "<p>Dear Anh/Chị,</p>\n" +
+                                "<p>Gửi nhắc nhở logtime đến anh chị: </p>\n" +
+                                "<p>Tuần này bạn chưa logtime đủ!   </p>\n" +
+                                "<p>Số giờ loctime hiện tại: " + sum + "</p>\n"+
+                                "<p>Số giờ logtime tối thiểu là : " + entriesTimeDTO + "</p>\n"+
+                                "<p>Số giờ logtime bạn còn thiếu là :  " + (entriesTimeDTO - sum) + "</p>\n" +
+                                "<p>Đây là email tự động không cần trả lời đâu...!</p>\n" +
                                 "<h3>Im testing send a HTML email</h3>"
                                 + "<img src='http://www.apache.org/images/asf_logo_wide.gif'>" +
                                 "</body>\n" +

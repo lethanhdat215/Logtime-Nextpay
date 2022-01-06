@@ -89,6 +89,7 @@ public class AccountController {
 //            String password = accountChangePassword.getPasswordNew();
 //            String passwordEncoder = bCryptPasswordEncoder.encode(password);
                 account.get().setPassword(passwordEncoder1);
+                account.get().setActive(true);
                 accountRepository.save(account.get());
                 return ResponseEntity.status(HttpStatus.OK).body(new
                         ResponseObject("OK", "change password ok", account));
@@ -106,7 +107,7 @@ public class AccountController {
     public ResponseEntity<ResponseObject> forgotPassword(@Valid @RequestBody AccountForgotPassword accountForgotPassword) throws MessagingException {
         Optional<Account> account = accountRepository.findAccountByUsername(accountForgotPassword.getUsername());
         if (account.isPresent()) {
-
+            account.get().setActive(false);
             String password =  RandomStringUtils.randomAscii(10); // random pass 6 so
 //            account.get().setPassword(password);
             String passwordEncoder = bCryptPasswordEncoder.encode(password);

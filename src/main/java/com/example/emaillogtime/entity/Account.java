@@ -27,6 +27,8 @@ public class Account {
     @NotBlank(message = "mat khau khong duoc de trong")
     @Column(name = "password")
     private String password;
+    @Column(name = "active")
+    private Boolean active = true;
 //    @JsonIgnore
 ////    @OneToMany(mappedBy = "account")
 ////    private Set<Role> roles;

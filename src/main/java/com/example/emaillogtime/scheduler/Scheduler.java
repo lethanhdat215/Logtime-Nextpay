@@ -29,7 +29,7 @@ public class Scheduler {
     }
 
 //    @Bean
-    @Scheduled(cron = "0 0 11 ? * SAT") // */30 * * * * * // 0 0 11 ? * SAT -> send mail vao luc 11h thu 7 hang tuan
+    @Scheduled(cron = "0 0 11 ? * SAT") //*/30 * * * * * // 0 0 11 ? * SAT -> send mail vao luc 11h thu 7 hang tuan
     public void reportCurrentTimeOne() {
         clientService.createTuan(dataMailDTO);
     }

@@ -74,7 +74,7 @@ public class ClientServiceImpl implements ClientService {
                             "</head>\n" +
                             "<body>\n" +
                             "<p>Dear Anh/Chị,</p>\n" +
-                            "<p>Gửi nhắc nhở logtime đến anh chị: </p>\n" +
+                            "<p>Gửi nhắc nhở logtime đến anh/chị: </p>\n" +
                             "<p>Hôm nay anh/chị chưa logtime đủ 8 tiếng  </p>\n" +
                             "<p>Số giờ Logtime hiện tại: " + sum + "</p>\n"+
                             "<p>Số giờ Logtime anh/chị còn thiếu ngày hôm nay là : " + (8-sum) + "</p>\n" +
@@ -128,7 +128,7 @@ public class ClientServiceImpl implements ClientService {
                                 "</head>\n" +
                                 "<body>\n" +
                                 "<p>Dear Anh/Chị,</p>\n" +
-                                "<p>Gửi nhắc nhở logtime đến anh chị: </p>\n" +
+                                "<p>Gửi nhắc nhở logtime đến anh/chị: </p>\n" +
                                 "<p>Tuần này anh/chị chưa logtime đủ!  </p>\n" +
                                 "<p>Số giờ Logtime hiện tại: " + sum + "</p>\n"+
                                 "<p>Số giờ Logtime tối thiểu là : " + entriesTime.getSumHours() + "</p>\n"+
@@ -161,7 +161,7 @@ public class ClientServiceImpl implements ClientService {
                                 "</head>\n" +
                                 "<body>\n" +
                                 "<p>Dear Anh/Chị,</p>\n" +
-                                "<p>Gửi nhắc nhở logtime đến anh chị: </p>\n" +
+                                "<p>Gửi nhắc nhở logtime đến anh/chị: </p>\n" +
                                 "<p>Tuần này anh/chị chưa logtime đủ!   </p>\n" +
                                 "<p>Số giờ Logtime hiện tại: " + sum + "</p>\n"+
                                 "<p>Số giờ Logtime tối thiểu là : " + entriesTimeDTO + "</p>\n"+

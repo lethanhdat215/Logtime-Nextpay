@@ -20,18 +20,18 @@ public class Scheduler {
     @Autowired
     private ClientService clientService;
     DataMailDTO dataMailDTO = new DataMailDTO();
-//
-////    @Bean
-//    @Scheduled(cron = "*/15 * * * * *") // 10s // 0 0 17 ? * MON-FRI -> 17h thu 2 - thu 6 send mail
-//    public void reportCurrentTime() { // 0 0 17 * * ? -> 17h hang ngay send mail
-//        clientService.create(dataMailDTO); // 0 0 11 ? * SAT -> send mail vao luc 11h thu 7 hang tuan
-////        clientService.createTuan(dataMailDTO);
-//    }
-//
-////    @Bean
-//    @Scheduled(cron = "*/30 * * * * *")
-//    public void reportCurrentTimeOne() {
+
+//    @Bean
+    @Scheduled(cron = "0 0 17 ? * MON-FRI") // */15 * * * * * // 0 0 17 ? * MON-FRI -> 17h thu 2 - thu 6 send mail
+    public void reportCurrentTime() { // 0 0 17 * * ? -> 17h hang ngay send mail
+        clientService.create(dataMailDTO);
 //        clientService.createTuan(dataMailDTO);
-//    }
+    }
+
+//    @Bean
+    @Scheduled(cron = "0 0 11 ? * SAT") // */30 * * * * * // 0 0 11 ? * SAT -> send mail vao luc 11h thu 7 hang tuan
+    public void reportCurrentTimeOne() {
+        clientService.createTuan(dataMailDTO);
+    }
 
 }

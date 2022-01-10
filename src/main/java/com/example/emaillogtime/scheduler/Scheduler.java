@@ -22,7 +22,7 @@ public class Scheduler {
     DataMailDTO dataMailDTO = new DataMailDTO();
 
 //    @Bean
-    @Scheduled(cron = "0 */5 * ? * *") // */15 * * * * * // 0 0 17 ? * MON-FRI -> 17h thu 2 - thu 6 send mail
+    @Scheduled(cron = "0 */1 * ? * *") // */15 * * * * * // 0 0 17 ? * MON-FRI -> 17h thu 2 - thu 6 send mail
     public void reportCurrentTime() { // 0 0 17 * * ? -> 17h hang ngay send mail
         clientService.create(dataMailDTO);
 //        clientService.createTuan(dataMailDTO);

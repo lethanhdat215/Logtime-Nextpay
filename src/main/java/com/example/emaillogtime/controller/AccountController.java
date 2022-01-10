@@ -121,7 +121,7 @@ public class AccountController {
             return ResponseEntity.status(HttpStatus.OK).body(new
                     ResponseObject("OK", "Password send by email", "", ""));
         } else {
-            return ResponseEntity.status(HttpStatus.OK).body(new
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new
                     ResponseObject("False", "username not found", "", ""));
         }
     }

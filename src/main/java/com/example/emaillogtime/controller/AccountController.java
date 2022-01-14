@@ -2,11 +2,14 @@ package com.example.emaillogtime.controller;
 
 import com.example.emaillogtime.dto.*;
 import com.example.emaillogtime.entity.Account;
+import com.example.emaillogtime.entity.User;
 import com.example.emaillogtime.reposiotry.AccountRepository;
 import com.example.emaillogtime.reposiotry.EntriesTimeDtoRepository;
+import com.example.emaillogtime.reposiotry.UserRepository;
 import com.example.emaillogtime.security.jwt.JwtProvider;
 import com.example.emaillogtime.service.AccountService;
 import com.example.emaillogtime.service.MailService;
+import com.example.emaillogtime.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,10 +43,28 @@ public class AccountController {
     @Autowired
     private JwtProvider jwtProvider;
 
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private UserService userService;
+
 //    @PostMapping()
 //    public ResponseEntity<EntriesTimeDTO> createEntriesTimeDTO (@RequestBody EntriesTimeDTO entriesTimeDTO) {
 //        return ResponseEntity.status(HttpStatus.OK).body(entriesTimeDtoRepository.save(entriesTimeDTO));
 //    }
+
+    @PostMapping("/create-user")
+    public ResponseEntity<ResponseObject> createUser(@Valid @RequestBody UserDTO userDTO) {
+        Optional<User> user = userRepository.findByMail(userDTO.getMail());
+        if (user.isPresent()) {
+            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(new
+                    ResponseObject("False","username da ton tai",""));
+        } else {
+            return ResponseEntity.status(HttpStatus.CREATED).body(new
+                    ResponseObject("OK","them user thanh cong",userService.save(userDTO)));
+        }
+
+    }
 
     @GetMapping("/get")
     public String greeting() {

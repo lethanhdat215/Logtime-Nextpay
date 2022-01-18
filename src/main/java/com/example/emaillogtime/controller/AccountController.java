@@ -28,6 +28,7 @@ import java.util.Random;
 @ComponentScan
 @RestController
 @RequestMapping(value = "account/v1")
+@CrossOrigin(origins = "*", maxAge = 3600, allowedHeaders = "*")
 @Slf4j
 public class AccountController {
     @Autowired

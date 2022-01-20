@@ -90,7 +90,7 @@ public class AccountController {
     ResponseEntity<ResponseObject> createUser(@Valid @RequestBody Account account) {
         Optional<Account> account1 = accountRepository.findAccountByUsername(account.getUsername());
         if (account1.isPresent()) {
-            return ResponseEntity.status(HttpStatus.OK).body(new
+            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(new
                     ResponseObject("False", "Username already", "",""));
         } else {
             String password = account.getPassword().trim();

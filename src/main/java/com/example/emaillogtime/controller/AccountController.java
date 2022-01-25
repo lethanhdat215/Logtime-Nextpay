@@ -155,7 +155,7 @@ public class AccountController {
         if (accountOptional.isPresent()) {
 //           if (accountOptional.get().getPassword().equals(account.getPassword())){
             if (bCryptPasswordEncoder.matches(account.getPassword(), accountOptional.get().getPassword())) {
-                String token = jwtProvider.generateToken(account.getUsername());
+                String token = jwtProvider.generateToken(account.getUsername(), accountOptional.get().getId());
                 return ResponseEntity.status(HttpStatus.OK).body(
                         new ResponseObject("OK", "login successfully",  token, accountOptional));
             } else {

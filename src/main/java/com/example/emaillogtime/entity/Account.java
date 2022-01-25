@@ -18,7 +18,7 @@ import java.util.Set;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     @NotBlank(message = "username khong duoc de trong,co chua khoang trang")
     @Column(name = "username")
     @Email(message = "email khong hop le")

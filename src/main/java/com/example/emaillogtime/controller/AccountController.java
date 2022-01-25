@@ -73,7 +73,7 @@ public class AccountController {
         return accountRepository.findAll();
     }
 
-    @PutMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<ResponseObject> updateEntriesTimeDTO(@Valid @PathVariable(name = "id") Long entriesTimeDtoId,
                                                                @RequestBody(required = false) EntriesTimeDTO entriesTimeDTO) {
         Optional<EntriesTimeDTO> entriesTimeDTO1 = entriesTimeDtoRepository.findById(entriesTimeDtoId);
@@ -102,7 +102,7 @@ public class AccountController {
         }
     }
 
-    @PutMapping("/change-password")
+    @PostMapping("/change-password")
     ResponseEntity<ResponseObject> changePassword(@Valid @RequestBody AccountChangePassword accountChangePassword) {
         Optional<Account> account = accountRepository.findById(accountChangePassword.getId());
         if (account.isPresent()) {

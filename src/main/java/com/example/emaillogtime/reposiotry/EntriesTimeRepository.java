@@ -20,10 +20,10 @@ public interface EntriesTimeRepository extends JpaRepository<EntriesTime, Long> 
 //    List<Float> getAllHoursAndAndDateOk(Long userId);
 
     @Query("select l.hours from EntriesTime l where l.user.userId=?1 and l.date = current_date")
-    List<Float> getAllHoursAndAndDate(Long userId);
+    List<Float> getAllHoursAndAndDate(String userId);
 
     @Query("select l.hours from EntriesTime l where l.user.userId=?1 ORDER BY l.date desc")
-    List<Float> getAllHoursAndAndDateOk(Long userId, Pageable pageable);
+    List<Float> getAllHoursAndAndDateOk(String userId, Pageable pageable);
 
 
 

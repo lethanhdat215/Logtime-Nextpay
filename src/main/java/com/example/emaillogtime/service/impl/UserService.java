@@ -6,6 +6,8 @@ import com.example.emaillogtime.reposiotry.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.UUID;
+
 @Service
 public class UserService implements com.example.emaillogtime.service.UserService {
     @Autowired
@@ -14,7 +16,7 @@ public class UserService implements com.example.emaillogtime.service.UserService
     @Override
     public User save(UserDTO userDTO) {
         User user = new User();
-        user.setUserId(userDTO.getUserId());
+        user.setUserId(UUID.randomUUID().toString());
         user.setMail(userDTO.getMail());
         return userRepository.save(user);
     }

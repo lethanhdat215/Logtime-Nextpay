@@ -18,7 +18,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userId")
-    private Long userId;
+    private String userId;
     @NotBlank(message = "username khong duoc de trong,co chua khoang trang")
     @Email(message = "email khong hop le")
     @Column(name = "mail_notification")

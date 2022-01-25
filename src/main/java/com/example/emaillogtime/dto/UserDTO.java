@@ -11,7 +11,7 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserDTO {
-    private Long userId;
+
     @NotBlank(message = "username khong duoc de trong,co chua khoang trang")
     @Email(message = "email khong hop le")
     private String mail;

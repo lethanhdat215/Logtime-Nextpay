@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.mail.MessagingException;
 import javax.validation.Valid;
+import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
@@ -68,8 +69,8 @@ public class AccountController {
     }
 
     @GetMapping("/get")
-    public String greeting() {
-        return "greeting ok";
+    public List<User> greeting() {
+        return userRepository.findAll();
     }
 
     @PutMapping("/{id}")

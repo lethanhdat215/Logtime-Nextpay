@@ -69,8 +69,8 @@ public class AccountController {
     }
 
     @GetMapping("/get")
-    public List<User> greeting() {
-        return userRepository.findAll();
+    public List<Account> greeting() {
+        return accountRepository.findAll();
     }
 
     @PutMapping("/{id}")

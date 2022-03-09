@@ -33,5 +33,4 @@ public class Scheduler {
     public void reportCurrentTimeOne() {
         clientService.createTuan(dataMailDTO);
     }
-
 }
